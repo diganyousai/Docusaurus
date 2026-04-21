@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: diganyousai/Docusaurus
+  branch: main
+
+media_folder: static/uploads
+public_folder: /uploads
+
+locale: zh_Hans
+
+collections:
+  - name: "hap"
+    label: "HAP 文档"
+    folder: "docs/hap"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "正文", name: "body", widget: "markdown" }
