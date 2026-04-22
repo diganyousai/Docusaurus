@@ -17,5 +17,9 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "标题", name: "title", widget: "string" }
-      - { label: "正文", name: "body", widget: "markdown" }
+      - label: "标题"
+        name: "title"
+        widget: "string"
+      - label: "正文"
+        name: "body"
+        widget: "markdown"
