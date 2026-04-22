@@ -87,16 +87,6 @@ const config = {
           sidebarId: 'hap',
           position: 'left',
         },
-        {
-          label: 'HDP',
-          to: '/hdp',
-          position: 'left',
-        },
-        {
-          label: '市场',
-          to: '/market',
-          position: 'left',
-        },
       ],
     },
 
