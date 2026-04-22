@@ -16,10 +16,13 @@ const config = {
   },
 
   /** ======================
-   * 站点访问地址
+   * ✅ GitHub Pages 访问地址（关键修改）
    * ====================== */
-  url: 'http://localhost:3000',
-  baseUrl: '/',
+  url: 'https://diganyousai.github.io',   // ✅ GitHub 用户名
+  baseUrl: '/Docusaurus/',                // ✅ 仓库名，必须以 / 结尾
+
+  organizationName: 'diganyousai',         // ✅ GitHub 用户 / 组织名
+  projectName: 'Docusaurus',               // ✅ 仓库名
 
   /** ======================
    * 中文站点
@@ -36,15 +39,10 @@ const config = {
     [
       'classic',
       {
-        /** 文档配置（核心） */
+        /** 文档配置 */
         docs: {
-          // ✅ 文档作为首页
-          routeBasePath: '/',
+          routeBasePath: '/', // ✅ 文档作为站点首页
           sidebarPath: require.resolve('./sidebars.js'),
-
-          // ✅ Docusaurus v3：
-          // ❌ 不要 editUrl: false
-          // ❌ 不要 breadcrumb
         },
 
         /** ✅ 不使用博客 */
@@ -69,7 +67,7 @@ const config = {
     },
 
     /** ======================
-     * 顶部横向导航
+     * 顶部导航
      * ====================== */
     navbar: {
       title: '明道云',
@@ -121,3 +119,4 @@ const config = {
 };
 
 export default config;
+``
