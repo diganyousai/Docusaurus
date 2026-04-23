@@ -16,13 +16,17 @@ const config = {
   },
 
   /** ======================
-   * ✅ GitHub Pages 访问地址（关键修改）
+   * ✅ Netlify 访问地址（已迁移）
    * ====================== */
-  url: 'https://diganyousai.github.io',   // ✅ GitHub 用户名
-  baseUrl: '/Docusaurus/',                // ✅ 仓库名，必须以 / 结尾
+  url: 'https://genuine-conkies-c8fc4a.netlify.app',
+  baseUrl: '/',
 
-  organizationName: 'diganyousai',         // ✅ GitHub 用户 / 组织名
-  projectName: 'Docusaurus',               // ✅ 仓库名
+  // ✅ 生产环境推荐：显式使用尾斜杠
+  // 避免 Netlify / SEO / 相对路径问题
+  trailingSlash: true,
+
+  organizationName: 'diganyousai', // GitHub 用户 / 组织名
+  projectName: 'Docusaurus',       // 仓库名
 
   /** ======================
    * 中文站点
@@ -41,11 +45,11 @@ const config = {
       {
         /** 文档配置 */
         docs: {
-          routeBasePath: '/', // ✅ 文档作为站点首页
+          routeBasePath: '/', // 文档作为站点首页
           sidebarPath: require.resolve('./sidebars.js'),
         },
 
-        /** ✅ 不使用博客 */
+        /** 不使用博客 */
         blog: false,
 
         /** 自定义样式 */
@@ -66,9 +70,7 @@ const config = {
       respectPrefersColorScheme: true,
     },
 
-    /** ======================
-     * 顶部导航
-     * ====================== */
+    /** 顶部导航 */
     navbar: {
       title: '明道云',
       logo: {
@@ -90,17 +92,13 @@ const config = {
       ],
     },
 
-    /** ======================
-     * Footer
-     * ====================== */
+    /** Footer */
     footer: {
       style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} 明道云`,
     },
 
-    /** ======================
-     * 代码高亮
-     * ====================== */
+    /** 代码高亮 */
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
@@ -109,4 +107,3 @@ const config = {
 };
 
 export default config;
-``
