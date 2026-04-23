@@ -5,19 +5,22 @@
     <title>文档后台</title>
     <meta name="robots" content="noindex" />
     <script>
+      // ✅ 手动初始化 CMS（必须）
       window.CMS_MANUAL_INIT = true;
     </script>
   </head>
   <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- ✅ 加载 Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+
+    <!-- ✅ 显式指定 config.yml（适配 GitHub Pages + baseUrl） -->
     <script>
       CMS.init({
         config: {
           load_config_file: true,
-          config_file: '/config.yml'
+          config_file: '/Docusaurus/config.yml'
         }
       });
     </script>
   </body>
 </html>
-``
