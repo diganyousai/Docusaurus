@@ -3,10 +3,10 @@ backend:
   repo: diganyousai/Docusaurus
   branch: main
 
-media_folder: static/uploads
-public_folder: /uploads
+site_url: https://diganyousai.github.io/Docusaurus/
 
-locale: zh_Hans
+media_folder: static/uploads
+public_folder: /Docusaurus/uploads
 
 collections:
   - name: "hap"
@@ -15,11 +15,12 @@ collections:
     create: true
     slug: "{{slug}}"
     editor:
-      preview: true
+      preview: false
     fields:
       - label: "标题"
         name: "title"
         widget: "string"
-      - label: "正文"
+      - label: "内容"
         name: "body"
         widget: "markdown"
+``
