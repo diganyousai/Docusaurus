@@ -5,22 +5,18 @@
     <title>文档后台</title>
     <meta name="robots" content="noindex" />
     <script>
-      // 告诉 Decap CMS：我们手动初始化
+      // ✅ 彻底关闭自动初始化
       window.CMS_MANUAL_INIT = true;
     </script>
   </head>
   <body>
-    <!-- ✅ 正确加载 Decap CMS（这是关键） -->
+    <!-- ✅ 正确加载 Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
 
-    <!-- ✅ 手动初始化，并显式指定 config.yml 路径 -->
+    <!-- ✅ 手动初始化，明确“不要再自动加载 admin/config.yml” -->
     <script>
       CMS.init({
-        config: {
-          load_config_file: true,
-          // ✅ GitHub Pages + baseUrl = /Docusaurus/
-          config_file: '/Docusaurus/config.yml'
-        }
+        configFile: '/Docusaurus/config.yml'
       });
     </script>
   </body>
