@@ -2,12 +2,13 @@ backend:
   name: git-gateway
   branch: main
 
+# ✅ 关键：禁用 Email 登录，避免 UI 误导和冲突
+disable_email_login: true
 
-
-site_url: https://diganyousai.github.io/Docusaurus/
+site_url: https://genuine-conkies-c8fc4a.netlify.app
 
 media_folder: static/uploads
-public_folder: /Docusaurus/uploads
+public_folder: /uploads
 
 collections:
   - name: hap
