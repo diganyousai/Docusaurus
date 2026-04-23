@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <title>文档后台</title>
     <meta name="robots" content="noindex" />
+
+    <!-- ✅ 必须：Netlify Identity Widget（缺了就没有 GitHub 登录） -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- ✅ 正确：用 script 标签加载 Decap CMS -->
+    <!-- ✅ Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
   </body>
 </html>
