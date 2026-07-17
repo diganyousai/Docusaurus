@@ -84,9 +84,21 @@ const config = {
           position: 'left',
         },
         {
-          label: 'HAP',
+          label: '文档',
           type: 'docSidebar',
-          sidebarId: 'hap',
+          sidebarId: 'skills',
+          position: 'left',
+        },
+        {
+          label: '项目',
+          type: 'docSidebar',
+          sidebarId: 'projects',
+          position: 'left',
+        },
+        {
+          label: '关于',
+          type: 'docSidebar',
+          sidebarId: 'about',
           position: 'left',
         },
       ],

@@ -11,10 +11,10 @@ sidebar_position: 1
 
 | 项目 | 一句话简介 | 技术栈 | 状态 |
 |---|---|---|---|
-| [项目 A · 内部协作平台](/docs/projects/project-a/) | 团队协作工具，支持实时编辑与文档协作 | React, Node.js, WebSocket | 已上线 |
-| [项目 B · 数据可视化工具](/docs/projects/project-b/) | 实时数据看板，支持自定义图表 | Vue 3, D3.js, Python | 已上线 |
-| [项目 C · 自动化部署系统](/docs/projects/project-c/) | 一键完成构建、测试、灰度发布 | Node.js, Docker | 持续迭代 |
-| [项目 D · 开源组件库](/docs/projects/project-d/) | 30+ 高质量 React 组件，Star 1k+ | React, TypeScript | 维护中 |
+| [项目 A · 内部协作平台](/projects/project-a/) | 团队协作工具，支持实时编辑与文档协作 | React, Node.js, WebSocket | 已上线 |
+| [项目 B · 数据可视化工具](/projects/project-b/) | 实时数据看板，支持自定义图表 | Vue 3, D3.js, Python | 已上线 |
+| [项目 C · 自动化部署系统](/projects/project-c/) | 一键完成构建、测试、灰度发布 | Node.js, Docker | 持续迭代 |
+| [项目 D · 开源组件库](/projects/project-d/) | 30+ 高质量 React 组件，Star 1k+ | React, TypeScript | 维护中 |
 
 ## 项目筛选
 

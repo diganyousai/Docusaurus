@@ -1,21 +1,25 @@
+// @ts-check
+// 文档侧边栏
+// 3 组：技能 / 项目 / 关于
+//
+// 3.10 严格校验：sidebars 中所有 doc ID 必须对应 docs/ 下的真实文件。
 module.exports = {
-  hap: [
-    {
-      type: 'category',
-      label: '平台介绍',
-      items: [
-        'hap/intro',
-        'hap/quick-start',
-      ],
-    },
-    {
-      type: 'category',
-      label: '应用搭建',
-      items: [
-        'hap/app-build',
-        'hap/page-manage',
-      ],
-    },
+  // 技能（单文件）
+  skills: [
+    'skills',
+  ],
+
+  // 项目
+  projects: [
+    'projects/overview',
+    'projects/project-a',
+    'projects/project-b',
+    'projects/project-c',
+    'projects/project-d',
+  ],
+
+  // 关于（单文件）
+  about: [
+    'about',
   ],
 };
-``
