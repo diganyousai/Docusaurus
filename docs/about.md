@@ -22,7 +22,7 @@ sidebar_position: 7
 
 - **邮箱**：[you@example.com](mailto:you@example.com)
 - **GitHub**：[github.com/yourname](https://github.com/yourname)
-- **博客**：[本站 /blog](/blog)
+- **博客**：见右侧导航「博客」集合（在后台管理）
 
 ## 合作方式
 
