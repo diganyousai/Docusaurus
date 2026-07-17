@@ -37,13 +37,13 @@ export default function Hero() {
           {profile.tagline}
         </p>
         <div style={{ marginTop: 24 }}>
-          <Link className="cta-button cta-primary" to="/docs/projects/overview">
+          <Link className="cta-button cta-primary" to="/projects/overview">
             查看作品
           </Link>
-          <Link className="cta-button cta-ghost" to="/docs/skills">
+          <Link className="cta-button cta-ghost" to="/skills">
             我的技能
           </Link>
-          <Link className="cta-button cta-ghost" to="/docs/about">
+          <Link className="cta-button cta-ghost" to="/about">
             联系我
           </Link>
         </div>

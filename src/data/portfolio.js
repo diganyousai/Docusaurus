@@ -41,7 +41,7 @@ export const projects = [
     title: '项目 A · 内部协作平台',
     desc: '从 0 到 1 搭建的团队协作工具，支持实时编辑、任务管理、文档协作。',
     tags: ['React', 'Node.js', 'WebSocket', 'PostgreSQL'],
-    link: '/docs/projects/project-a',
+    link: '/projects/project-a',
     status: '已上线',
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     title: '项目 B · 数据可视化工具',
     desc: '为运营团队打造的实时数据看板，支持自定义图表与下钻分析。',
     tags: ['Vue 3', 'D3.js', 'ECharts', 'Python'],
-    link: '/docs/projects/project-b',
+    link: '/projects/project-b',
     status: '已上线',
   },
   {
@@ -57,7 +57,7 @@ export const projects = [
     title: '项目 C · 自动化部署系统',
     desc: '简化部署流程的内部工具，一键完成构建、测试、灰度发布。',
     tags: ['Node.js', 'Docker', 'GitHub Actions'],
-    link: '/docs/projects/project-c',
+    link: '/projects/project-c',
     status: '持续迭代',
   },
   {
@@ -65,7 +65,7 @@ export const projects = [
     title: '项目 D · 开源组件库',
     desc: '个人维护的 React 组件库，Star 1k+，提供 30+ 高质量组件。',
     tags: ['React', 'TypeScript', 'Storybook'],
-    link: '/docs/projects/project-d',
+    link: '/projects/project-d',
     status: '维护中',
   },
 ];
