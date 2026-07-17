@@ -11,9 +11,9 @@ backend:
 # 不开放邮件登录（只走 GitHub）
 disable_email_login: true
 
-site_url: https://genuine-conkies-c8fc4a.netlify.app
-display_url: https://genuine-conkies-c8fc4a.netlify.app
-logo_url: https://genuine-conkies-c8fc4a.netlify.app/img/logo.svg
+# 注意：不要在这里写 site_url / display_url / logo_url
+# Decap CMS 会把它们用在 OAuth site_id 参数拼接上，加上 https:// 会导致 Netlify OAuth 返回 404
+# site_url 已被移除
 
 # 媒体文件位置
 media_folder: static/uploads
