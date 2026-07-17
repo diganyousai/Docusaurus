@@ -5,9 +5,6 @@ backend:
   name: github
   repo: diganyousai/Docusaurus
   branch: main
-  # 用 Netlify 的 OAuth 代理做 CORS 跨域握手（无需本地起服务）
-  base_url: https://api.netlify.com
-  auth_endpoint: api.netlify.com/auth
   open_authoring: false
   squash_merges: true
 
