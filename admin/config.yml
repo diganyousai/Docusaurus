@@ -1,27 +1,69 @@
+# ============================================
+# Decap CMS 配置（GitHub backend + Netlify CORS 代理 OAuth）
+# ============================================
 backend:
-  name: git-gateway
+  name: github
+  repo: diganyousai/Docusaurus
   branch: main
+  # 用 Netlify 的 OAuth 代理做 CORS 跨域握手（无需本地起服务）
+  base_url: https://api.netlify.com
+  auth_endpoint: api.netlify.com/auth
+  open_authoring: false
+  squash_merges: true
 
-# ✅ 关键：禁用 Email 登录，避免 UI 误导和冲突
+# 不开放邮件登录（只走 GitHub）
 disable_email_login: true
 
 site_url: https://genuine-conkies-c8fc4a.netlify.app
+display_url: https://genuine-conkies-c8fc4a.netlify.app
+logo_url: https://genuine-conkies-c8fc4a.netlify.app/img/logo.svg
 
+# 媒体文件位置
 media_folder: static/uploads
 public_folder: /uploads
 
+# ============== 内容集合 ==============
 collections:
-  - name: hap
-    label: HAP 文档
-    folder: docs/hap
+  # 1) 技能文档
+  - name: skills
+    label: 技能
+    folder: docs/skills
     create: true
     slug: "{{slug}}"
+    extension: md
     editor:
       preview: false
     fields:
-      - label: 标题
-        name: title
-        widget: string
-      - label: 内容
-        name: body
-        widget: markdown
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "侧边栏排序", name: "sidebar_position", widget: "number", default: 1, required: false }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  # 2) 项目文档
+  - name: projects
+    label: 项目
+    folder: docs/projects
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    editor:
+      preview: false
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "侧边栏排序", name: "sidebar_position", widget: "number", default: 2, required: false }
+      - { label: "项目背景", name: "background", widget: "text", required: false }
+      - { label: "标签（逗号分隔）", name: "tags", widget: "string", required: false }
+      - { label: "状态", name: "status", widget: "string", required: false, default: "已完成" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  # 3) 关于
+  - name: about
+    label: 关于
+    folder: docs/about-src
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    editor:
+      preview: false
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "正文", name: "body", widget: "markdown" }
