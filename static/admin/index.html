@@ -4,12 +4,17 @@
     <meta charset="utf-8" />
     <title>文档后台</title>
     <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- ✅ 必须：Netlify Identity Widget（缺了就没有 GitHub 登录） -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- 让 Decap CMS 知道去哪里找 config.yml（SPA fallback 不会拦截 type="text/yaml" 的 link） -->
+    <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
+
+    <style>
+      html, body { background: #0d1117; color: #f0f6fc; margin: 0; }
+      #nc-root { min-height: 100vh; }
+    </style>
   </head>
   <body>
-    <!-- ✅ Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
