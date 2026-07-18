@@ -1,12 +1,13 @@
 // @ts-check
 // 文档侧边栏
-// 3 组：技能 / 项目 / 关于
+// 注意：navbar 现在用直接 to: 链接而不是 docSidebar，
+// 所以本文件不会被引用，但保留以备后续用回 docSidebar。
 //
-// 3.10 严格校验：sidebars 中所有 doc ID 必须对应 docs/ 下的真实文件。
+// 3.10 严格校验：所有 doc ID 必须对应 docs/ 下的真实文件。
 module.exports = {
-  // 技能（单文件）
+  // 技能：docs/skills/index.md
   skills: [
-    'skills',
+    'skills/index',
   ],
 
   // 项目
@@ -18,7 +19,7 @@ module.exports = {
     'projects/project-d',
   ],
 
-  // 关于（单文件）
+  // 关于：docs/about.md
   about: [
     'about',
   ],

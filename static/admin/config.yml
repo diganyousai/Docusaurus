@@ -1,6 +1,7 @@
 # ============================================
-# Decap CMS 配置（GitHub backend + Netlify CORS 代理 OAuth）
+# Decap CMS 配置
 # ============================================
+# Backend: GitHub 直连（OAuth 通过 Netlify 代理做 CORS 握手）
 backend:
   name: github
   repo: diganyousai/Docusaurus
@@ -12,16 +13,17 @@ backend:
 disable_email_login: true
 
 # 注意：不要在这里写 site_url / display_url / logo_url
-# Decap CMS 会把它们用在 OAuth site_id 参数拼接上，加上 https:// 会导致 Netlify OAuth 返回 404
-# site_url 已被移除
+# Decap CMS 会把它们用在 OAuth site_id 参数拼接上，
+# 加上 https:// 会导致 Netlify OAuth 找不到对应 site 返回 404
 
 # 媒体文件位置
 media_folder: static/uploads
 public_folder: /uploads
 
 # ============== 内容集合 ==============
+# collection 路径与 docs/ 下文件结构严格对应
 collections:
-  # 1) 技能文档
+  # 1) 技能（docs/skills/ 目录下的所有 .md）
   - name: skills
     label: 技能
     folder: docs/skills
@@ -35,7 +37,7 @@ collections:
       - { label: "侧边栏排序", name: "sidebar_position", widget: "number", default: 1, required: false }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  # 2) 项目文档
+  # 2) 项目（docs/projects/ 目录下的所有 .md）
   - name: projects
     label: 项目
     folder: docs/projects
@@ -47,20 +49,15 @@ collections:
     fields:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "侧边栏排序", name: "sidebar_position", widget: "number", default: 2, required: false }
-      - { label: "项目背景", name: "background", widget: "text", required: false }
-      - { label: "标签（逗号分隔）", name: "tags", widget: "string", required: false }
-      - { label: "状态", name: "status", widget: "string", required: false, default: "已完成" }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  # 3) 关于
+  # 3) 关于（docs/about.md 单文件，files 模式精确锁定）
   - name: about
     label: 关于
-    folder: docs/about-src
-    create: true
-    slug: "{{slug}}"
-    extension: md
-    editor:
-      preview: false
-    fields:
-      - { label: "标题", name: "title", widget: "string" }
-      - { label: "正文", name: "body", widget: "markdown" }
+    files:
+      - name: about
+        label: 关于
+        file: docs/about.md
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "正文", name: "body", widget: "markdown" }
