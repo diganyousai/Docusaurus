@@ -1,5 +1,5 @@
 ---
-title: 项目 D · 开源组件库
+title: 项目 D · Docusaurus 说明文档
 sidebar_position: 5
 ---
 # 项目 D ·  Docusaurus 说明文档
