@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { skills } from '@site/src/data/portfolio';
 
-export default function Skills() {
+export default function Skills({ data = {} }) {
   const [active, setActive] = useState(null);
+  const {
+    skills_title = '技能栈',
+    skills_subtitle = '',
+    skills_groups = [],
+  } = data;
 
   return (
     <section
@@ -20,18 +24,20 @@ export default function Skills() {
           marginBottom: 8,
         }}
       >
-        技能栈
+        {skills_title}
       </h2>
-      <p
-        style={{
-          textAlign: 'center',
-          color: '#8b949e',
-          marginBottom: 40,
-          fontSize: 15,
-        }}
-      >
-        5 年积累的技术能力，按方向分组
-      </p>
+      {skills_subtitle && (
+        <p
+          style={{
+            textAlign: 'center',
+            color: '#8b949e',
+            marginBottom: 40,
+            fontSize: 15,
+          }}
+        >
+          {skills_subtitle}
+        </p>
+      )}
 
       <div
         style={{
@@ -40,7 +46,7 @@ export default function Skills() {
           gap: 24,
         }}
       >
-        {skills.map((group, gi) => (
+        {skills_groups.map((group, gi) => (
           <div
             key={gi}
             className="section-card"
@@ -59,7 +65,7 @@ export default function Skills() {
               {group.category}
             </h3>
             <div>
-              {group.items.map((item, ii) => (
+              {(group.items || []).map((item, ii) => (
                 <span
                   key={ii}
                   className="skill-tag"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { features } from '@site/src/data/portfolio';
 
 const ICONS = {
   code: (
@@ -24,7 +23,13 @@ const ICONS = {
   ),
 };
 
-export default function Features() {
+export default function Features({ data = {} }) {
+  const {
+    features_title = '我能提供的',
+    features_subtitle = '',
+    features = [],
+  } = data;
+
   return (
     <section
       style={{
@@ -41,18 +46,20 @@ export default function Features() {
             marginBottom: 8,
           }}
         >
-          我能提供的
+          {features_title}
         </h2>
-        <p
-          style={{
-            textAlign: 'center',
-            color: '#8b949e',
-            marginBottom: 40,
-            fontSize: 15,
-          }}
-        >
-          三大核心能力
-        </p>
+        {features_subtitle && (
+          <p
+            style={{
+              textAlign: 'center',
+              color: '#8b949e',
+              marginBottom: 40,
+              fontSize: 15,
+            }}
+          >
+            {features_subtitle}
+          </p>
+        )}
 
         <div
           style={{

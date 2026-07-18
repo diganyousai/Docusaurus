@@ -1,7 +1,12 @@
 import React from 'react';
-import { timeline } from '@site/src/data/portfolio';
 
-export default function Timeline() {
+export default function Timeline({ data = {} }) {
+  const {
+    timeline_title = '经历',
+    timeline_subtitle = '',
+    timeline = [],
+  } = data;
+
   return (
     <section
       style={{
@@ -18,18 +23,20 @@ export default function Timeline() {
             marginBottom: 8,
           }}
         >
-          经历
+          {timeline_title}
         </h2>
-        <p
-          style={{
-            textAlign: 'center',
-            color: '#8b949e',
-            marginBottom: 40,
-            fontSize: 15,
-          }}
-        >
-          工作经历与教育背景
-        </p>
+        {timeline_subtitle && (
+          <p
+            style={{
+              textAlign: 'center',
+              color: '#8b949e',
+              marginBottom: 40,
+              fontSize: 15,
+            }}
+          >
+            {timeline_subtitle}
+          </p>
+        )}
 
         <div>
           {timeline.map((item, i) => (
@@ -53,16 +60,18 @@ export default function Timeline() {
                 }}
               >
                 {item.title}
-                <span
-                  style={{
-                    color: '#8b949e',
-                    fontSize: 14,
-                    fontWeight: 400,
-                    marginLeft: 8,
-                  }}
-                >
-                  · {item.org}
-                </span>
+                {item.org && (
+                  <span
+                    style={{
+                      color: '#8b949e',
+                      fontSize: 14,
+                      fontWeight: 400,
+                      marginLeft: 8,
+                    }}
+                  >
+                    · {item.org}
+                  </span>
+                )}
               </h3>
               <p
                 style={{

@@ -1,7 +1,15 @@
 import React from 'react';
-import { profile } from '@site/src/data/portfolio';
 
-export default function Contact() {
+export default function Contact({ data = {} }) {
+  const {
+    contact_title = '联系我',
+    contact_subtitle = '',
+    contact_email = '',
+    contact_github = '',
+    contact_socials = [],
+  } = data;
+  const displayName = data.hero_name || 'Your Name';
+
   return (
     <section
       style={{
@@ -18,17 +26,19 @@ export default function Contact() {
           marginBottom: 8,
         }}
       >
-        联系我
+        {contact_title}
       </h2>
-      <p
-        style={{
-          color: '#8b949e',
-          marginBottom: 32,
-          fontSize: 15,
-        }}
-      >
-        有项目合作、技术交流或只是想打个招呼？
-      </p>
+      {contact_subtitle && (
+        <p
+          style={{
+            color: '#8b949e',
+            marginBottom: 32,
+            fontSize: 15,
+          }}
+        >
+          {contact_subtitle}
+        </p>
+      )}
 
       <div
         style={{
@@ -38,11 +48,11 @@ export default function Contact() {
           flexWrap: 'wrap',
         }}
       >
-        {profile.socials.map((s, i) => (
+        {contact_socials.map((s, i) => (
           <a
             key={i}
             href={s.href}
-            target={s.href.startsWith('http') ? '_blank' : undefined}
+            target={s.href?.startsWith('http') ? '_blank' : undefined}
             rel="noopener noreferrer"
             className="cta-button cta-ghost"
             style={{ minWidth: 140 }}
@@ -59,7 +69,7 @@ export default function Contact() {
           marginTop: 48,
         }}
       >
-        © {new Date().getFullYear()} {profile.name} · Built with Docusaurus
+        © {new Date().getFullYear()} {displayName} · Built with Docusaurus
       </p>
     </section>
   );

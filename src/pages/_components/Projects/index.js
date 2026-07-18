@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
-import { projects } from '@site/src/data/portfolio';
 
 const PAGE_SIZE = 3;
 
-export default function Projects() {
+export default function Projects({ data = {} }) {
+  const {
+    projects_title = '精选项目',
+    projects_subtitle = '',
+    projects = [],
+  } = data;
   const [page, setPage] = useState(0);
   const totalPages = Math.ceil(projects.length / PAGE_SIZE);
   const visible = projects.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
@@ -25,18 +29,20 @@ export default function Projects() {
           marginBottom: 8,
         }}
       >
-        精选项目
+        {projects_title}
       </h2>
-      <p
-        style={{
-          textAlign: 'center',
-          color: '#8b949e',
-          marginBottom: 40,
-          fontSize: 15,
-        }}
-      >
-        从 0 到 1 完整交付的部分作品
-      </p>
+      {projects_subtitle && (
+        <p
+          style={{
+            textAlign: 'center',
+            color: '#8b949e',
+            marginBottom: 40,
+            fontSize: 15,
+          }}
+        >
+          {projects_subtitle}
+        </p>
+      )}
 
       <div
         style={{
@@ -46,8 +52,8 @@ export default function Projects() {
           marginBottom: 24,
         }}
       >
-        {visible.map((p) => (
-          <Link key={p.id} to={p.link} className="project-card">
+        {visible.map((p, i) => (
+          <Link key={i} to={p.link || '#'} className="project-card">
             <div
               style={{
                 display: 'flex',
@@ -66,18 +72,20 @@ export default function Projects() {
               >
                 {p.title}
               </h3>
-              <span
-                style={{
-                  fontSize: 11,
-                  background: 'rgba(34, 197, 94, 0.15)',
-                  color: '#4ade80',
-                  padding: '2px 8px',
-                  borderRadius: 4,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {p.status}
-              </span>
+              {p.status && (
+                <span
+                  style={{
+                    fontSize: 11,
+                    background: 'rgba(34, 197, 94, 0.15)',
+                    color: '#4ade80',
+                    padding: '2px 8px',
+                    borderRadius: 4,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {p.status}
+                </span>
+              )}
             </div>
             <p
               style={{
@@ -90,9 +98,9 @@ export default function Projects() {
               {p.desc}
             </p>
             <div>
-              {p.tags.map((t, i) => (
+              {(p.tags || []).map((t, ti) => (
                 <span
-                  key={i}
+                  key={ti}
                   style={{
                     display: 'inline-block',
                     background: 'rgba(88, 166, 255, 0.12)',

@@ -61,3 +61,97 @@ collections:
         fields:
           - { label: "标题", name: "title", widget: "string" }
           - { label: "正文", name: "body", widget: "markdown" }
+
+  # 4) 首页（docs/home.md 单文件，由 frontmatter 驱动整站首页内容）
+  - name: home
+    label: 首页
+    files:
+      - name: home
+        label: 首页
+        file: docs/home.md
+        fields:
+          # —— 文档元信息（一般无需改）——
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - { label: "侧边栏排序", name: "sidebar_position", widget: "number", required: false }
+          - { label: "不列出", name: "unlisted", widget: "boolean", default: true, required: false }
+          - { label: "隐藏标题", name: "hide_title", widget: "boolean", default: true, required: false }
+
+          # —— Hero 区 ——
+          - { label: "Hero · 姓名", name: "hero_name", widget: "string" }
+          - { label: "Hero · 职位", name: "hero_title", widget: "string" }
+          - { label: "Hero · 所在地", name: "hero_location", widget: "string" }
+          - { label: "Hero · 一句话介绍", name: "hero_tagline", widget: "text" }
+          - { label: "Hero · 主按钮文案", name: "hero_cta_primary_label", widget: "string" }
+          - { label: "Hero · 主按钮链接", name: "hero_cta_primary_to", widget: "string" }
+          - { label: "Hero · 次按钮文案", name: "hero_cta_secondary_label", widget: "string" }
+          - { label: "Hero · 次按钮链接", name: "hero_cta_secondary_to", widget: "string" }
+          - { label: "Hero · 第三按钮文案", name: "hero_cta_tertiary_label", widget: "string" }
+          - { label: "Hero · 第三按钮链接", name: "hero_cta_tertiary_to", widget: "string" }
+
+          # —— 技能区 ——
+          - { label: "技能 · 区块标题", name: "skills_title", widget: "string" }
+          - { label: "技能 · 副标题", name: "skills_subtitle", widget: "string" }
+          - label: "技能 · 分组列表"
+            name: "skills_groups"
+            widget: "list"
+            fields:
+              - { label: "分类名", name: "category", widget: "string" }
+              - label: "技能项"
+                name: "items"
+                widget: "list"
+                field: { label: "技能名", name: "skill", widget: "string" }
+
+          # —— Features 区 ——
+          - { label: "能力 · 区块标题", name: "features_title", widget: "string" }
+          - { label: "能力 · 副标题", name: "features_subtitle", widget: "string" }
+          - label: "能力 · 卡片列表"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "图标 key", name: "icon", widget: "select", options: ["code", "arch", "team"], required: false }
+              - { label: "描述", name: "desc", widget: "text" }
+
+          # —— Projects 区 ——
+          - { label: "项目 · 区块标题", name: "projects_title", widget: "string" }
+          - { label: "项目 · 副标题", name: "projects_subtitle", widget: "string" }
+          - label: "项目 · 卡片列表"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "项目名", name: "title", widget: "string" }
+              - { label: "描述", name: "desc", widget: "text" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "跳转链接", name: "link", widget: "string", required: false }
+              - { label: "状态", name: "status", widget: "string", required: false }
+
+          # —— Timeline 区 ——
+          - { label: "经历 · 区块标题", name: "timeline_title", widget: "string" }
+          - { label: "经历 · 副标题", name: "timeline_subtitle", widget: "string" }
+          - label: "经历 · 列表"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "时间", name: "date", widget: "string" }
+              - { label: "职位/课程", name: "title", widget: "string" }
+              - { label: "机构/学校", name: "org", widget: "string", required: false }
+              - { label: "描述", name: "desc", widget: "text" }
+
+          # —— Contact 区 ——
+          - { label: "联系 · 区块标题", name: "contact_title", widget: "string" }
+          - { label: "联系 · 副标题", name: "contact_subtitle", widget: "text" }
+          - { label: "联系 · 邮箱", name: "contact_email", widget: "string" }
+          - { label: "联系 · GitHub 链接", name: "contact_github", widget: "string" }
+          - label: "联系 · 社交按钮"
+            name: "contact_socials"
+            widget: "list"
+            fields:
+              - { label: "按钮文案", name: "label", widget: "string" }
+              - { label: "跳转链接", name: "href", widget: "string" }
+
+          # —— 正文（保留说明文字，可不填）——
+          - { label: "正文", name: "body", widget: "markdown" }

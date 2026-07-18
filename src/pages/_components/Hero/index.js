@@ -1,8 +1,20 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import { profile } from '@site/src/data/portfolio';
 
-export default function Hero() {
+export default function Hero({ data = {} }) {
+  const {
+    hero_name = 'Your Name',
+    hero_title = '全栈工程师 · 独立开发者',
+    hero_location = '中国',
+    hero_tagline = '',
+    hero_cta_primary_label = '查看作品',
+    hero_cta_primary_to = '/projects/overview',
+    hero_cta_secondary_label = '我的技能',
+    hero_cta_secondary_to = '/skills',
+    hero_cta_tertiary_label = '联系我',
+    hero_cta_tertiary_to = '/about',
+  } = data;
+
   return (
     <header className="hero-gradient">
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
@@ -14,7 +26,7 @@ export default function Hero() {
             color: '#ffffff',
           }}
         >
-          Hi, I'm {profile.name}
+          Hi, I'm {hero_name}
         </h1>
         <p
           className="hero__subtitle"
@@ -23,28 +35,30 @@ export default function Hero() {
             margin: '12px 0 32px',
           }}
         >
-          {profile.title} · {profile.location}
+          {hero_title}{hero_location ? ` · ${hero_location}` : ''}
         </p>
-        <p
-          style={{
-            fontSize: 16,
-            color: '#c7d2fe',
-            maxWidth: 640,
-            margin: '0 auto 32px',
-            lineHeight: 1.6,
-          }}
-        >
-          {profile.tagline}
-        </p>
+        {hero_tagline && (
+          <p
+            style={{
+              fontSize: 16,
+              color: '#c7d2fe',
+              maxWidth: 640,
+              margin: '0 auto 32px',
+              lineHeight: 1.6,
+            }}
+          >
+            {hero_tagline}
+          </p>
+        )}
         <div style={{ marginTop: 24 }}>
-          <Link className="cta-button cta-primary" to="/projects/overview">
-            查看作品
+          <Link className="cta-button cta-primary" to={hero_cta_primary_to}>
+            {hero_cta_primary_label}
           </Link>
-          <Link className="cta-button cta-ghost" to="/skills">
-            我的技能
+          <Link className="cta-button cta-ghost" to={hero_cta_secondary_to}>
+            {hero_cta_secondary_label}
           </Link>
-          <Link className="cta-button cta-ghost" to="/about">
-            联系我
+          <Link className="cta-button cta-ghost" to={hero_cta_tertiary_to}>
+            {hero_cta_tertiary_label}
           </Link>
         </div>
       </div>
