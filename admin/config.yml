@@ -74,7 +74,6 @@ collections:
           - { label: "标题", name: "title", widget: "string" }
           - { label: "Slug", name: "slug", widget: "string" }
           - { label: "侧边栏排序", name: "sidebar_position", widget: "number", required: false }
-          - { label: "不列出", name: "unlisted", widget: "boolean", default: true, required: false }
           - { label: "隐藏标题", name: "hide_title", widget: "boolean", default: true, required: false }
 
           # —— Hero 区 ——
