@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
+// @ts-ignore
+import * as homeModule from '@site/docs/home.md';
 
 import Hero from './_components/Hero';
 import Skills from './_components/Skills';
@@ -12,16 +13,8 @@ import Contact from './_components/Contact';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-
-  // 从 Docusaurus 文档 plugin 的全局数据中读取所有文档元数据
-  // docs plugin id 默认为 'default'（单 docs 配置时）
-  const allDocs = useAllDocsData();
-  const docsData = allDocs?.default?.versions?.[0]?.docs;
-  // 找到 id === 'home' 的文档（slug 是 home）
-  const homeDoc = docsData?.find((d) => d.id === 'home');
-
-  // 前台渲染用的数据
-  const data = homeDoc?.frontMatter || {};
+  // home.md 通过 webpack loader 暴露 frontMatter
+  const data = (homeModule && (homeModule.frontMatter || homeModule.default?.frontMatter)) || {};
 
   return (
     <Layout
