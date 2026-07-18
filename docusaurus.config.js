@@ -7,8 +7,8 @@ const config = {
   /** ======================
    * 基本站点信息
    * ====================== */
-  title: '明道云',
-  tagline: '产品帮助与使用文档',
+  title: '个人主页',
+  tagline: '全栈工程师 · 独立开发者',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -72,33 +72,30 @@ const config = {
 
     /** 顶部导航 */
     navbar: {
-      title: '明道云',
+      title: '个人主页',
       logo: {
-        alt: '明道云 Logo',
+        alt: '个人主页 Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
-          label: '帮助',
+          label: '首页',
           to: '/',
           position: 'left',
         },
         {
-          label: '文档',
-          type: 'docSidebar',
-          sidebarId: 'skills',
+          label: '技能',
+          to: '/skills',
           position: 'left',
         },
         {
           label: '项目',
-          type: 'docSidebar',
-          sidebarId: 'projects',
+          to: '/projects/overview',
           position: 'left',
         },
         {
           label: '关于',
-          type: 'docSidebar',
-          sidebarId: 'about',
+          to: '/about',
           position: 'left',
         },
       ],
