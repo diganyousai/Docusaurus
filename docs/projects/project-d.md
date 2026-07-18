@@ -2,43 +2,66 @@
 title: 项目 D · 开源组件库
 sidebar_position: 5
 ---
-
-# 项目 D · 开源组件库
+# 项目 D ·  Docusaurus 说明文档
 
 ## 项目背景
 
-在多个项目中沉淀的 React 组件库，目标是提供一套开箱即用、易于定制的高质量组件。
+建立新产品的说明文档
 
-## 组件列表
+## 项目描述
 
-- **基础组件**：Button、Input、Select、Checkbox、Radio
-- **展示组件**：Card、Modal、Drawer、Tooltip、Popover
-- **数据展示**：Table、Pagination、Tag、Avatar
-- **表单组件**：Form、Form.Item、Form.List
-- **反馈组件**：Message、Notification、Loading
+* 基于 React 生态与 SSG 技术，用 Docusaurus 搭建高性能文档站。引入管理后台 Decap CMS，并配合 CI/CD 实现自动化部署。
 
-## 技术亮点
+## 项目问题解释
 
-- **TypeScript 优先**：所有组件都有完整的类型定义
-- **按需加载**：基于 ES Module + Tree Shaking
-- **主题定制**：通过 CSS 变量 + Design Token
-- **可访问性**：遵循 WAI-ARIA 规范
-- **单元测试**：覆盖率 90%+
+* **react特点：**
 
-## 文档与示例
+  \
 
-- 完整的 API 文档
-- 每个组件都有可编辑的 Playground
-- 支持在线复制示例代码
 
-## 开源运营
+  **组件化**
 
-- **GitHub**：Star 1k+
-- **NPM**：周下载 2k+
-- **贡献者**：15+
+  ：UI 拆成可复用的独立单元（
 
-## 未来规划
+  `<Hero />`
 
-- 增加更多数据可视化组件
-- 推出 React Native 版本
-- 国际化支持
+  、
+
+  `<Skills />`
+
+   这种）
+
+  **声明式**
+
+  ：你描述"在什么状态下 UI 长什么样"，React 负责把 DOM 渲染出来
+
+  **虚拟 DOM**
+
+  ：React 在内存里维护一个"虚拟"的 DOM 树，计算出真正的 DOM 需要改动的部分再更新（比手动 jQuery 高效得多）
+
+  **单向数据流**
+
+  ：父组件通过 
+
+  `props`
+
+   把数据传给子组件，子组件通过 
+
+  `useState`
+
+  /
+
+  `useEffect`
+
+   管理自己的状态
+
+
+* SSG（Static Site Generation，静态站点生成）是什么
+* **提前**
+
+  在 build 时把页面全部渲染成 
+
+  **HTML 文件**
+
+  ，运行时只发这些静态文件，浏览器拿到就能直接显示（不用等服务器计算）
+*
