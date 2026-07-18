@@ -107,7 +107,7 @@ const config = {
     /** Footer */
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} 明道云`,
+      copyright: `Copyright © ${new Date().getFullYear()} 个人主页`,
     },
 
     /** 代码高亮 */
