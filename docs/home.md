@@ -1,12 +1,11 @@
 ---
 title: 首页
 slug: home
-unlisted: true
 hide_title: true
 hide_table_of_contents: true
 sidebar_position: -100
-hero_name: Your Name
-hero_title: 全栈工程师 · 独立开发者
+hero_name: Frank
+hero_title: 全栈工程师 · agent开发独立开发者
 hero_location: 中国
 hero_tagline: 5 年 Web 开发经验，专注于现代前端架构与全栈解决方案。
 hero_cta_primary_label: 查看作品
